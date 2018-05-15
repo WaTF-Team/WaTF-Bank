@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.WaTF.WaTFBank.TransferFavorite">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/spaceMedium"
+                    android:text="To Account : "
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/spFavAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="Amount"
+                android:inputType="number"
+                android:text=""
+                android:textSize="20sp" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spaceNarrow" />
+
+            <Button
+                android:id="@+id/btnTransfer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button"
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff"
+                android:text="Transfer" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spaceNarrow" />
+
+            <Button
+                android:id="@+id/btnAddFav"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button"
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff"
+                android:text="Add Account To Favorite" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
