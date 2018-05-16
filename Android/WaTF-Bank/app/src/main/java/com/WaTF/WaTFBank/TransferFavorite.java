@@ -56,7 +56,9 @@ public class TransferFavorite extends LogoutButton implements View.OnClickListen
     @Override
     protected void onRestart() {
         super.onRestart();
-        startActivity(new Intent(this, CheckPin.class));
+        Intent intent = new Intent(this, CheckPin.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     @Override

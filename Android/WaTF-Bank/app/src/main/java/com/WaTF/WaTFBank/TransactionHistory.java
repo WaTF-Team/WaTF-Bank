@@ -47,7 +47,9 @@ public class TransactionHistory extends LogoutButton {
     @Override
     protected void onRestart() {
         super.onRestart();
-        startActivity(new Intent(this, CheckPin.class));
+        Intent intent = new Intent(this, CheckPin.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     private String getFromSharePref(String name) {
