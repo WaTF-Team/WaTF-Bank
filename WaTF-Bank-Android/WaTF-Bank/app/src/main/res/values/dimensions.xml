@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<resources>
-    <dimen name="spaceMedium">20dp</dimen>
-    <dimen name="spaceNarrow">10dp</dimen>
-    <dimen name="button">40dp</dimen>
-</resources>

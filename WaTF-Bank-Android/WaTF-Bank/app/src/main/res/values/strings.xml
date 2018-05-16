@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">WaTF Bank</string>
-    <string name="url_login">/login</string>
-    <string name="url_accountSummary">/accountSummary</string>
-    <string name="url_transfer">/transfer</string>
-    <string name="url_transferHistory">/transferHistory</string>
-    <string name="url_LoginLog">/UsersLoginLog</string>
-</resources>

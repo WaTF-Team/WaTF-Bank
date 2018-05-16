@@ -1,0 +1,22 @@
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+<div class="container">
+  <h2>Login Log Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Account Number</th>
+        <th>DateTime</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for login_log in login_logs %}
+      <tr>
+        <td>{{login_log.users["username"]}}</td>
+        <td>{{login_log.users["accountNo"]}}</td>
+        <td>{{login_log["datetime"].strftime('%Y-%m-%d %H:%M:%S')}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
