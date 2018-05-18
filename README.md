@@ -1,6 +1,6 @@
 # WaTF-Bank
 
-What a Terrible Failure mobile banking application written for both Android and iOS and the backend written in python
+What a Terrible Failure mobile banking application written for both Android and iOS and the backend written in python3
 
 ## Android
 
@@ -14,6 +14,15 @@ IPA can be installed using IPA Installer or Cydia Impactor
 
 ## Backend
 
+Required Library
+- flask  
+- flask_sqlalchemy
+- flask_script
+- flask_migrate
+
+Could be installed manually or using pip3 install -r Library.txt
+ 
+ 
 Start backend (The database will also be remigrated)
 ```
 ./StartServer
@@ -43,6 +52,7 @@ Start backend (The database will also be remigrated)
 - Boonpoj
 - Parameth
 - Prathan
+- Krit
 
 MIT License
 
