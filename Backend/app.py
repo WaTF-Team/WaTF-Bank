@@ -1,4 +1,3 @@
-from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from random import *
 import os
@@ -23,7 +22,7 @@ def login():
     password = request_body_Json['password']
     u = User.query.filter_by(username = username).first()
     if not u:
-        return '{"message":"Invalid username or password"}'
+        return '{"message":"Invalid username"}'
     else:
         if u.password != password:
             return '{"message":"Invalid username or password"}'
