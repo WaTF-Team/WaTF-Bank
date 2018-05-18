@@ -53,7 +53,7 @@ Required Library
 Easy installation through
 
 ```
-pip3 install -r Library.txt
+pip3 install -r requirements.txt
 ```
 
 Starting backend (The database will also be remigrated)
