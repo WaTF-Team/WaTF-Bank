@@ -4,7 +4,7 @@ What a Terrible Failure Mobile Banking Application (WaTF-Bank), which uses pytho
 - Application developers can understand and consider mobile application security aspect by investigating the vulnerable app (WaTF-Bank) on both Android and iOS platforms.
 - Penetration testers can practice security assessment skill on mobile application security assessment in order to identify and understand the implication of the vulnerable app.
 
-The list of vulnerabilities on WaTF-Bank are:
+## List of Vulnerabilities
 
 - Reverse Engineering on Application Binary
 - Hardcoded Sensitive Information
