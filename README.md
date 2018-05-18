@@ -1,3 +1,5 @@
+<img src="logo.png" alt="WaTF-Bank" width="200" align="center"> 
+
 # WaTF-Bank
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -51,7 +53,7 @@ Required Library
 Easy installation through
 
 ```
-pip3 install -r Library.txt
+pip3 install -r requirements.txt
 ```
 
 Starting backend (The database will also be remigrated)
