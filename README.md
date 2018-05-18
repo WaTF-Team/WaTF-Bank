@@ -1,6 +1,5 @@
 <img src="logo.png" alt="WaTF-Bank" width="200" align="center"> 
 
-# WaTF-Bank
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), which uses python (Flask framework) as a backend server, is built for Android and iOS App. The objective of this project:
