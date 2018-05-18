@@ -1,6 +1,6 @@
 # WaTF-Bank
 
-What a Terrible Failure mobile banking application (WaTF-Bank), which uses python (Flask framework) as a backend server, is built for Android and iOS App. The objective of this project:
+What a Terrible Failure Mobile Banking Application (WaTF-Bank), which uses python (Flask framework) as a backend server, is built for Android and iOS App. The objective of this project:
 - Application developers can understand and consider mobile application security aspect by investigating the vulnerable app (WaTF-Bank) on both Android and iOS platforms.
 - Penetration testers can practice security assessment skill on mobile application security assessment in order to identify and understand the implication of the vulnerable app.
 
@@ -29,6 +29,7 @@ The list of vulnerabilities on WaTF-Bank are:
 - Hidden and Extraneous Functionalities
 - Runtime Manipulation/Code Tampering
 - Misuse of Biometric Authentication
+- Insecure Communication Channel
 - Weak Password Policy for Password/PIN
 - Input Validation on API (SQL Injection, Negative value)
 - Information Exposure through API Response Message
