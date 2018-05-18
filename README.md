@@ -1,3 +1,5 @@
+<img src="logo.png" alt="WaTF-Bank" width="200" align="center"> 
+
 # WaTF-Bank
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
