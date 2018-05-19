@@ -4,11 +4,10 @@
 
 What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), which uses python (Flask framework) as a backend server, is built for Android and iOS App. The objective of this project:
 - Application developers can understand and consider mobile application security aspect by investigating the vulnerable app (WaTF-Bank) on both Android and iOS platforms.
-- Penetration testers can practice security assessment skill on mobile application security assessment in order to identify and understand the implication of the vulnerable app.
+- Penetration testers can practice security assessment skill on mobile application in order to identify and understand the implication of the vulnerable app.
 
 ## List of Vulnerabilities
 
-- Reverse Engineering on Application Binary
 - Hardcoded Sensitive Information
 - Unauthorized Code Modification
 - Excessive App Permissions
@@ -17,18 +16,18 @@ What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), which uses pytho
 - Application Debuggable
 - Weak Cryptographic Algorithm
 - Hardcoded key
-- Custom Encryption Protocols
+- Custom Encryption Protocol
 - Insecure Local Storage
-- Unencrypted Database Files
+- Unencrypted Database File
 - Information Disclosure Through Logcat
 - Sensitive Information Protection on Application Backgrounding
 - Copy/Paste Buffer Caching
 - Keyboard Input Caching
 - Sensitive Information Masking
-- Android Content provider flaws
-- Android Broadcast receiver flaws
-- Client-Side Based Authentication
-- Hidden and Extraneous Functionalities
+- Android Content provider flaw
+- Android Broadcast receiver flaw
+- Client-Side Based Authentication flaw
+- Hidden and Extraneous Functionality
 - Runtime Manipulation/Code Tampering
 - Misuse of Biometric Authentication
 - Insecure Communication Channel
@@ -38,7 +37,7 @@ What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), which uses pytho
 - Control of Interaction Frequency on API
 - Account Enumeration
 - Account Lockout Policy
-- Session timout and Session terminatation
+- Session timeout and Session termination
 - Authorization flaws
 
 ## Backend Server
