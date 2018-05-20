@@ -8,37 +8,18 @@ What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), which uses pytho
 
 ## List of Vulnerabilities
 
-- Hardcoded Sensitive Information
-- Unauthorized Code Modification
-- Excessive App Permissions
-- Unsupported version of OS Installation Allowed
-- Unrestricted Backup File
-- Application Debuggable
-- Weak Cryptographic Algorithm
-- Hardcoded key
-- Custom Encryption Protocol
-- Insecure Local Storage
-- Unencrypted Database File
-- Information Disclosure Through Logcat
-- Sensitive Information Protection on Application Backgrounding
-- Copy/Paste Buffer Caching
-- Keyboard Input Caching
-- Sensitive Information Masking
-- Android Content provider flaw
-- Android Broadcast receiver flaw
-- Client-Side Based Authentication flaw
-- Hidden and Extraneous Functionality
-- Runtime Manipulation/Code Tampering
-- Misuse of Biometric Authentication
-- Insecure Communication Channel
-- Weak Password Policy for Password/PIN
-- Input Validation on API (SQL Injection, Negative value)
-- Information Exposure through API Response Message
-- Control of Interaction Frequency on API
-- Account Enumeration
-- Account Lockout Policy
-- Session timeout and Session termination
-- Authorization flaws
+| OWASP Mobile Top 10 2016 | Vulnerability Name |
+| :------------ |:-------------|
+| M1. Improper Platform Usage | <ul><li>Excessive App Permissions</li><li>Unsupported version of OS Installation Allowed</li><li>Unrestricted Backup File</li><li>Android Content provider Flaw</li><li>Android Broadcast receiver Flaw</li><li>Insecure URL Scheme Handler</li><li>Input Validation on API (SQL Injection, Negative value)</li><li>Information Exposure through API Response Message</li><li>Control of Interaction Frequency on API</li></ul> | 
+| M2. Insecure Data Storage   | <ul><li>Insecure Application Local Storage</li><li>Insecure Keychain Usage</li><li>Unencrypted Database File</li><li>Sensitive Information on Application Backgrounding</li><li>Information Disclosure Through Device Logs</li><li>Copy/Paste Buffer Caching</li><li>Keyboard Input Caching</li><li>Lack of Sensitive Information Masking</li></ul> | 
+| M3. Insecure Communication  | <ul><li>Insecure SSL Verification</li></ul> | 
+| M4. Insecure Authentication | <ul><li>Client-Side Based Authentication Flaw</li><li>Account Enumeration</li><li>Account Lockout Policy</li><li>Weak Password Policy for Password/PIN</li><li>Misuse of Biometric Authentication</li><li>Session Management Flaw</li></ul> | 
+| M5. Insufficient Cryptography | <ul><li>Hardcoded Encryption Key</li><li>Weak Cryptographic Algorithm</li><li>Custom Encryption Protocol</li></ul> | 
+| M6. Insecure Authorization  | <ul><li>Insecure Direct Object Reference</li><li>Business Logic Flaw</li></ul> | 
+| M7 Client Code Quality      | <ul><li>TBA</li></ul> | 
+| M8. Code Tampering | <ul><li>Unauthorized Code Modification (Application Patching)</li><li>Weak Root/Jailbreak Detection</li><li>Method Swizzling</li></ul> | 
+| M9. Reverse Engineering | <ul><li>Lack of Code Obfuscation</li></ul> | 
+| M10. Extraneous Functionality | <ul><li>Application Debuggable</li><li>Hidden Endpoint Exposure</li></ul> | 
 
 ## Backend Server
 
