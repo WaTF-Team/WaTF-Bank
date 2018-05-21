@@ -1,6 +1,6 @@
 <img src="logo.png" alt="WaTF-Bank" width="200" align="center"> 
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), written in Java, Objective-C and Python (Flask framework) as a backend server, is designed to simulate a "real-world" web services-enabled mobile banking application that contains over 30 vulnerabilities. 
 
