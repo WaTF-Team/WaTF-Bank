@@ -50,6 +50,6 @@ Starting backend (The database will also be remigrated)
 - Krit Saengkyongam
 
 ## License
-This project is using the GNU General Public License v3.0.
+This project is using the MIT License.
 
 Copyright (c) 2018 WaTF-Team
