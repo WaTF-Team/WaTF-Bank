@@ -12,7 +12,7 @@ static bool bgState = false;
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     bgState = false;
-    if([JailbreakDetection checkJail])
+    if(![JailbreakDetection isJail])
     {
         if([url.scheme isEqualToString:@"watf"])
         {
@@ -110,7 +110,7 @@ static bool bgState = false;
     if(bgState)
     {
         bgState = false;
-        if(![JailbreakDetection checkJail])
+        if(![JailbreakDetection isJail])
         {
             self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Jailbreak"];
             return;

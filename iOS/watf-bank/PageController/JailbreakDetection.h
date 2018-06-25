@@ -1,7 +1,7 @@
 #import "Util.h"
 
 @interface JailbreakDetection : UIViewController
-+(BOOL)checkJail;
++(BOOL)isJail;
 -(BOOL)checkFile;
 -(BOOL)checkRead;
 -(BOOL)checkWrite;

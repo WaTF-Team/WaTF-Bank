@@ -12,7 +12,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if([self checkFile]&&[self checkRead]&&[self checkWrite])
+    if(![JailbreakDetection isJail])
     {
         if([Util getKeychain:@"token"]==nil || [[Util getKeychain:@"token"] isEqualToString:@""])
         {
@@ -106,10 +106,10 @@
     return true;
 }
 
-+(BOOL)checkJail
++(BOOL)isJail
 {
     JailbreakDetection *j = [JailbreakDetection new];
-    return [j checkFile]&&[j checkRead]&&[j checkWrite];
+    return !([j checkFile]&&[j checkRead]&&[j checkWrite]);
 }
 
 - (void)didReceiveMemoryWarning {
