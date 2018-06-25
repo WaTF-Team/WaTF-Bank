@@ -81,7 +81,7 @@
 
 /* Begin PBXFileReference section */
 		E613F37620AAB28C00CEEA81 /* JailbreakDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JailbreakDetection.h; sourceTree = "<group>"; };
-		E6292CA620A829450062602F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../pic/logo.png; sourceTree = "<group>"; };
+		E6292CA620A829450062602F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E692D4A420872EF10000798E /* AddFavourite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFavourite.m; sourceTree = "<group>"; };
 		E6BFAFC920996CA70013E7FB /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.30.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		E6CF7E30209EDEAA00A7978C /* TransferResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferResult.m; sourceTree = "<group>"; };
