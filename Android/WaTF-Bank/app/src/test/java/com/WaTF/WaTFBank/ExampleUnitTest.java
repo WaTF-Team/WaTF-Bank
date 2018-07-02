@@ -1,4 +1,4 @@
-package com.example.kpmg.vulbank;
+package com.WaTF.WaTFBank;
 
 import org.junit.Test;
 

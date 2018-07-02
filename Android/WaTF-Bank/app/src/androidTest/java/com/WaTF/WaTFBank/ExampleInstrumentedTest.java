@@ -1,4 +1,4 @@
-package com.example.kpmg.vulbank;
+package com.WaTF.WaTFBank;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
