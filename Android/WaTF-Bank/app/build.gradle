@@ -26,7 +26,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.squareup.okhttp3:okhttp:3.7.0'
-    compile 'com.multidots:fingerprint-auth:1.0.1'
     compile 'com.google.android.gms:play-services-ads:11.8.0'
     compile 'net.zetetic:android-database-sqlcipher:3.5.7@aar'
 }

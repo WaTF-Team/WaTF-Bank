@@ -36,8 +36,7 @@
                 android:hint="Pin"
                 android:inputType="numberDecimal"
                 android:maxLength="4"
-                android:textSize="20sp"
-                android:visibility="gone" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvFingerPrint"
@@ -46,7 +45,8 @@
                 android:layout_gravity="center"
                 android:drawableLeft="@drawable/ic_fingerprint_black_24dp"
                 android:text="fingerprint"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:visibility="gone" />
 
             <android.support.v4.widget.Space
                 android:layout_width="match_parent"
@@ -58,8 +58,7 @@
                 android:layout_height="@dimen/button"
                 android:background="@color/colorPrimary"
                 android:text="Check Pin"
-                android:textColor="#ffffff"
-                android:visibility="gone" />
+                android:textColor="#ffffff" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

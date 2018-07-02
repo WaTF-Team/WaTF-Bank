@@ -1,11 +1,15 @@
 package com.WaTF.WaTFBank;
 
+import android.Manifest;
+import android.app.KeyguardManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,20 +17,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.multidots.fingerprintauth.FingerPrintAuthCallback;
-import com.multidots.fingerprintauth.FingerPrintAuthHelper;
-import com.multidots.fingerprintauth.FingerPrintUtils;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class SetPin extends AppCompatActivity implements View.OnClickListener, FingerPrintAuthCallback {
+public class SetPin extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvSetFP;
     EditText etPin;
     Button btnSetPin, btnSetting;
-    FingerPrintAuthHelper mFingerPrintAuthHelper;
+    private FingerprintManager mFingerprintManager;
+    private KeyguardManager mKeyguardManager;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,26 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener, F
         btnSetPin.setOnClickListener(this);
         btnSetting = findViewById(R.id.btnSetting);
         btnSetting.setOnClickListener(this);
-        mFingerPrintAuthHelper = FingerPrintAuthHelper.getHelper(this, this);
+        mKeyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+        mFingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        } else
+            Toast.makeText(this, "Fingerprint enabled", Toast.LENGTH_SHORT).show();
+
+        if (mFingerprintManager.isHardwareDetected()) {
+            if (!mKeyguardManager.isKeyguardSecure()) {
+                Toast.makeText(this, "Please set pin", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (!mFingerprintManager.hasEnrolledFingerprints()) {
+                tvSetFP.setVisibility(View.VISIBLE);
+                btnSetting.setVisibility(View.VISIBLE);
+                return;
+            }
+        } else
+            Toast.makeText(this, "No hardware", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -53,9 +74,8 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener, F
                 intent.putExtra("flag", true);
                 startActivity(intent);
             }
-        } else
-            FingerPrintUtils.openSecuritySettings(this);
-
+        } else if (view == btnSetting)
+            startActivity(new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS));
     }
 
     private String md5(String in) {
@@ -83,42 +103,5 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener, F
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(name, data);
         editor.commit();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        tvSetFP.setVisibility(View.GONE);
-        btnSetting.setVisibility(View.GONE);
-        mFingerPrintAuthHelper.startAuth();
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mFingerPrintAuthHelper.stopAuth();
-    }
-
-    @Override
-    public void onNoFingerPrintHardwareFound() {
-    }
-
-    @Override
-    public void onNoFingerPrintRegistered() {
-        tvSetFP.setVisibility(View.VISIBLE);
-        btnSetting.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onBelowMarshmallow() {
-    }
-
-    @Override
-    public void onAuthSuccess(FingerprintManager.CryptoObject cryptoObject) {
-    }
-
-    @Override
-    public void onAuthFailed(int errorCode, String errorMessage) {
     }
 }

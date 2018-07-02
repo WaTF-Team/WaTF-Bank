@@ -12,20 +12,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.multidots.fingerprintauth.AuthErrorCodes;
-import com.multidots.fingerprintauth.FingerPrintAuthCallback;
-import com.multidots.fingerprintauth.FingerPrintAuthHelper;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class CheckPin extends LogoutButton implements View.OnClickListener, FingerPrintAuthCallback {
+public class CheckPin extends LogoutButton implements View.OnClickListener {
 
     EditText etPin;
     TextView tvFingerPrint;
     Button btnSetPin;
-    FingerPrintAuthHelper mFingerPrintAuthHelper;
+    private FingerprintManager mFingerprintManager;
+    private FingerprintManager.CryptoObject mCryptoObject;
+    private FingerprintHelper mFingerprintHelper;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +34,8 @@ public class CheckPin extends LogoutButton implements View.OnClickListener, Fing
         tvFingerPrint = findViewById(R.id.tvFingerPrint);
         btnSetPin = findViewById(R.id.btnSetPin);
         btnSetPin.setOnClickListener(this);
-        mFingerPrintAuthHelper = FingerPrintAuthHelper.getHelper(this, (FingerPrintAuthCallback) this);
+        mFingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
+        mFingerprintHelper = new FingerprintHelper(this);
     }
 
     @Override
@@ -80,61 +81,21 @@ public class CheckPin extends LogoutButton implements View.OnClickListener, Fing
         return data;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onResume() {
         super.onResume();
-        mFingerPrintAuthHelper.startAuth();
+        if (mFingerprintHelper != null) {
+            mFingerprintHelper.startAuth(mFingerprintManager, mCryptoObject);
+        }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onPause() {
         super.onPause();
-        mFingerPrintAuthHelper.stopAuth();
-    }
-
-    @Override
-    public void onNoFingerPrintHardwareFound() {
-        btnSetPin.setVisibility(View.VISIBLE);
-        etPin.setVisibility(View.VISIBLE);
-        tvFingerPrint.setVisibility(View.GONE);
-    }
-
-    public void onNoFingerPrintRegistered() {
-        btnSetPin.setVisibility(View.VISIBLE);
-        etPin.setVisibility(View.VISIBLE);
-        tvFingerPrint.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onBelowMarshmallow() {
-        btnSetPin.setVisibility(View.VISIBLE);
-        etPin.setVisibility(View.VISIBLE);
-        tvFingerPrint.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onAuthSuccess(FingerprintManager.CryptoObject cryptoObject) {
-        Intent intent = new Intent(CheckPin.this, Home.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.putExtra("flag", true);
-        startActivity(intent);
-    }
-
-    @Override
-    public void onAuthFailed(int errorCode, String errorMessage) {
-        switch (errorCode) {
-            case AuthErrorCodes.CANNOT_RECOGNIZE_ERROR:
-                Toast.makeText(this, "Cannot recognize your finger print. Please try again.", Toast.LENGTH_SHORT).show();
-                break;
-            case AuthErrorCodes.NON_RECOVERABLE_ERROR:
-                btnSetPin.setVisibility(View.VISIBLE);
-                etPin.setVisibility(View.VISIBLE);
-                tvFingerPrint.setVisibility(View.GONE);
-                break;
-            case AuthErrorCodes.RECOVERABLE_ERROR:
-                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
-                break;
+        if (mFingerprintHelper != null) {
+            mFingerprintHelper.stopListening();
         }
     }
 }
