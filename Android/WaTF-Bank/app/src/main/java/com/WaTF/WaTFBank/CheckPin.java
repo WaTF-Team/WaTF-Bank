@@ -35,7 +35,12 @@ public class CheckPin extends LogoutButton implements View.OnClickListener {
         btnSetPin = findViewById(R.id.btnSetPin);
         btnSetPin.setOnClickListener(this);
         mFingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
-        mFingerprintHelper = new FingerprintHelper(this);
+        if (mFingerprintManager.isHardwareDetected()) {
+            if (mFingerprintManager.hasEnrolledFingerprints()) {
+                mFingerprintHelper = new FingerprintHelper(this);
+                return;
+            }
+        }
     }
 
     @Override

@@ -8,11 +8,13 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -25,7 +27,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.squareup.okhttp3:okhttp:3.7.0'
-    compile 'com.google.android.gms:play-services-ads:11.8.0'
-    compile 'net.zetetic:android-database-sqlcipher:3.5.7@aar'
+    api 'com.squareup.okhttp3:okhttp:3.7.0'
+    api 'com.google.android.gms:play-services-ads:11.8.0'
+    api 'net.zetetic:android-database-sqlcipher:3.5.7@aar'
 }
