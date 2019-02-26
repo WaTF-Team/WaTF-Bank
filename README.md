@@ -2,7 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), written in Java, Objective-C and Python (Flask framework) as a backend server, is designed to simulate a "real-world" web services-enabled mobile banking application that contains over 30 vulnerabilities. 
+Update iOS Swift! (Still Beta)
+
+What-a-Terrible-Failure Mobile Banking Application (WaTF-Bank), written in Java, Swift 4, Objective-C and Python (Flask framework) as a backend server, is designed to simulate a "real-world" web services-enabled mobile banking application that contains over 30 vulnerabilities. 
 
 The objective of this project:
 - Application developers, programmers and architects can understand and consider how to create secure software by investigating the vulnerable app (WaTF-Bank) on both Android and iOS platforms.
