@@ -132,14 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E6292CA520A829360062602F /* image */ = {
-			isa = PBXGroup;
-			children = (
-				E6292CA620A829450062602F /* logo.png */,
-			);
-			path = image;
-			sourceTree = "<group>";
-		};
 		E692D4922086E31D0000798E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +165,7 @@
 		E6D5168120749ED90091A854 /* watf-bank */ = {
 			isa = PBXGroup;
 			children = (
-				E6292CA520A829360062602F /* image */,
+				E6292CA620A829450062602F /* logo.png */,
 				E6DA09AE207C8A9200C8314E /* PageController */,
 				E6D5168220749ED90091A854 /* AppDelegate.h */,
 				E6D5168320749ED90091A854 /* AppDelegate.m */,
