@@ -22,20 +22,30 @@ class Login : UIViewController {
     @IBAction func push(_ sender: Any) {
         login.isEnabled = false
         Http.setIp(ip.text!)
+        _ = KeyChain.save("ip", ip.text!)
+        let a = SQLCipher.createFav()
+        let b = SQLCipher.createCred()
+        if !(a||b) {
+            Util.alert(self, "Create Table Failed")
+            _ = SQLCipher.drop("fav")
+            _ = SQLCipher.drop("cred")
+            return
+        }
         let payload = ["username":username.text!,"password":password.text!]
-        Http().post(payload, "login", completionHandler: {(res: [String:String]) in
+        Http().post(payload, "login", completionHandler: {(re: [String:Any]) in
+            var res = re as! [String:String]
             self.login.isEnabled = true
             if let e = res["error"] {
                 Util.alert(self, e)
             }
-            else if res["message"] == "success" {
+            else if res["message"] == "Success" {
                 if KeyChain.save("token", res["token"]!) && KeyChain.save("accountNo", res["accountNo"]!) {
                     _ = SQLCipher.insertCred(self.username.text!, self.password.text!)
                     Util.changeView(self, "Pin")
                 }
             }
-            else if res["message"] == "invalid" {
-                Util.alert(self, "Invalid Username/Password")
+            else if let m = res["message"] {
+                Util.alert(self, m)
             }
             else {
                 Util.alert(self, "An Error Occurred")

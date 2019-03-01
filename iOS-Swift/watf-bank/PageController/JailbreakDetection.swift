@@ -3,7 +3,7 @@ import UIKit
 class JailbreakDetection : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
-        if(isJail()) {
+        if isJail() {
             if let token = KeyChain.load("token") {
                 if token != "" {
                     Util.changeView(self,"Pin")

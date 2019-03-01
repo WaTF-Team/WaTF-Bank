@@ -14,15 +14,19 @@ class Summary : UIViewController {
             return
         }
         let input = ["accountNo":acc,"token":token]
-        Http().post(input, "accountSummary", completionHandler: {(res: [String:String]) in
+        Http().post(input, "accountSummary", completionHandler: {(re: [String:Any]) in
+            var res = re as! [String:String]
             if let e = res["error"] {
                 Util.alert(self, e)
             }
-            else if res["message"] == "success" {
+            else if res["message"] == "Success" {
                 self.username.text = "Username : "+res["username"]!
                 self.tel.text = "Telephone : "+res["tel"]!
                 self.balance.text = "Balance : "+res["balance"]!
                 self.accountNo.text = "Account No : "+acc
+            }
+            else if let m = res["message"] {
+                Util.alert(self, m)
             }
             else {
                 Util.alert(self, "An Error Occurred")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E66864882227D57800B06DE2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E66864822227D57800B06DE2 /* logo.png */; };
 		E6AE1FCF221D094400C48740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE1FCE221D094400C48740 /* AppDelegate.swift */; };
 		E6AE1FD1221D094400C48740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE1FD0221D094400C48740 /* ViewController.swift */; };
 		E6AE1FD4221D094400C48740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6AE1FD2221D094400C48740 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E66864822227D57800B06DE2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E6AE1FCB221D094400C48740 /* watf-bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watf-bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AE1FCE221D094400C48740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6AE1FD0221D094400C48740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		E6AE1FCD221D094400C48740 /* watf-bank */ = {
 			isa = PBXGroup;
 			children = (
+				E66864822227D57800B06DE2 /* logo.png */,
 				E6AE1FE0221D0A7000C48740 /* PageController */,
 				E6AE1FCE221D094400C48740 /* AppDelegate.swift */,
 				E6AE1FD0221D094400C48740 /* ViewController.swift */,
@@ -298,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E66864882227D57800B06DE2 /* logo.png in Resources */,
 				E6AE1FD9221D094600C48740 /* LaunchScreen.storyboard in Resources */,
 				E6AE1FD6221D094600C48740 /* Assets.xcassets in Resources */,
 				E6AE1FD4221D094400C48740 /* Main.storyboard in Resources */,

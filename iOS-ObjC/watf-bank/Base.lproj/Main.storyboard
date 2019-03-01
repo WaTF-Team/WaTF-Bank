@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,7 +46,7 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cB9-Vb-G5X">
-                                <rect key="frame" x="43.5" y="124" width="232" height="232"/>
+                                <rect key="frame" x="44" y="124" width="232" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="Z2y-X8-L6X"/>
                                     <constraint firstAttribute="height" constant="232" id="er3-08-N35"/>
@@ -122,7 +122,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="h1s-Cw-y9u">
-                                <rect key="frame" x="69.5" y="79" width="180" height="180"/>
+                                <rect key="frame" x="70" y="79" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="fAc-ee-K8e"/>
                                     <constraint firstAttribute="width" constant="180" id="h5I-94-KAj"/>
@@ -180,7 +180,7 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pFa-U9-psK">
-                                <rect key="frame" x="69.5" y="84" width="180" height="180"/>
+                                <rect key="frame" x="70" y="84" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="HtH-rj-xlc"/>
                                     <constraint firstAttribute="width" constant="180" id="ewY-WP-th1"/>
@@ -323,7 +323,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-8O-Ig3">
-                                <rect key="frame" x="0.0" y="20" width="318.5" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="WaTF Bank" id="V8F-fI-8tA">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="qEK-dZ-0dm">

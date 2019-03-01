@@ -45,16 +45,21 @@ class Favourite : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         }
         let toAcc = SQLCipher.selectFav(pickerView(picker, titleForRow: picker.selectedRow(inComponent: 0), forComponent: 0)!)[0]
         let input = ["accountNo":acc,"toAccountNo":toAcc,"amount":amount.text!,"token":token]
-        Http().post(input, "transfer", completionHandler: {(res: [String:String]) in
+        Http().post(input, "transfer", completionHandler: {(re: [String:Any]) in
+            var res = re as! [String:String]
             if let e = res["error"] {
                 Util.alert(self, e)
             }
-            else if res["message"] == "success" {
+            else if res["message"] == "Success" {
                 let t = self.storyboard!.instantiateViewController(withIdentifier: "TransferResult") as! TransferResult
-                t.fromAccount.text = "From : "+res["username"]!
-                t.toAccount.text = "To : "+res["tel"]!
-                t.amount.text = "Amount : "+res["balance"]!
+                t.labelV = "Transfer Succeeded"
+                t.fromAccountV = "From : "+res["username"]!
+                t.toAccountV = "To : "+res["toAccount"]!
+                t.amountV = "Amount : "+res["amount"]!
                 self.present(t, animated: true, completion: nil)
+            }
+            else if let m = res["message"] {
+                Util.alert(self, m)
             }
             else {
                 Util.alert(self, "An Error Occurred")

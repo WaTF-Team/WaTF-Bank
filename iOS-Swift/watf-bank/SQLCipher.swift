@@ -134,7 +134,7 @@ class SQLCipher {
         var res = Array<String>()
         if sqlite3_open(dbPath.path, &db) == SQLITE_OK {
             sqlite3_key(db, &key, Int32(key.count))
-            if sqlite3_prepare_v2(db, "select accountNo from fav where name=\(input)", -1, &stmt, nil) == SQLITE_OK {
+            if sqlite3_prepare_v2(db, "select accountNo from fav where \"name\"=\"\(input)\"", -1, &stmt, nil) == SQLITE_OK {
                 while sqlite3_step(stmt) == SQLITE_ROW {
                     if let data = sqlite3_column_text(stmt, 0) {
                         res.append(String(cString: data))
@@ -160,7 +160,7 @@ class SQLCipher {
         var res = Array<String>()
         if sqlite3_open(dbPath.path, &db) == SQLITE_OK {
             sqlite3_key(db, &key, Int32(key.count))
-            if sqlite3_prepare_v2(db, "select password from cred where username=\(input)", -1, &stmt, nil) == SQLITE_OK {
+            if sqlite3_prepare_v2(db, "select password from cred where \"username\"=\"\(input)\"", -1, &stmt, nil) == SQLITE_OK {
                 while sqlite3_step(stmt) == SQLITE_ROW {
                     if let data = sqlite3_column_text(stmt, 0) {
                         res.append(String(cString: data))
@@ -186,7 +186,7 @@ class SQLCipher {
         var res = Array<String>()
         if sqlite3_open(dbPath.path, &db) == SQLITE_OK {
             sqlite3_key(db, &key, Int32(key.count))
-            if sqlite3_prepare_v2(db, "select * from \(table)", -1, &stmt, nil) == SQLITE_OK {
+            if sqlite3_prepare_v2(db, "select * from \"\(table)\"", -1, &stmt, nil) == SQLITE_OK {
                 while sqlite3_step(stmt) == SQLITE_ROW {
                     if let data = sqlite3_column_text(stmt, 0) {
                         res.append(String(cString: data))
@@ -211,7 +211,7 @@ class SQLCipher {
         }
         if sqlite3_open(dbPath.path, &db) == SQLITE_OK {
             sqlite3_key(db, &key, Int32(key.count))
-            if sqlite3_exec(db, "drop table \(table)", nil, nil, nil) == SQLITE_OK {
+            if sqlite3_exec(db, "drop table \"\(table)\"", nil, nil, nil) == SQLITE_OK {
                 r = true
             }
         }

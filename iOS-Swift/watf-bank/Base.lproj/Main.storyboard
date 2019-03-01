@@ -13,7 +13,7 @@
         <!--Jailbreak Detection-->
         <scene sceneID="NXt-Ya-tTi">
             <objects>
-                <viewController storyboardIdentifier="JailbreakDetection" id="ORt-jo-H47" customClass="JailbreakDetection" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JailbreakDetection" id="ORt-jo-H47" customClass="JailbreakDetection" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r9o-38-njU"/>
                         <viewControllerLayoutGuide type="bottom" id="EI1-x8-VW9"/>
@@ -32,7 +32,7 @@
         <!--Jailbreak-->
         <scene sceneID="tJ0-cd-cNx">
             <objects>
-                <viewController storyboardIdentifier="Jailbreak" id="Y6W-Uk-7hd" customClass="Jailbreak" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Jailbreak" id="Y6W-Uk-7hd" customClass="Jailbreak" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kX2-cd-1YS"/>
                         <viewControllerLayoutGuide type="bottom" id="Emn-Ch-U1S"/>
@@ -84,7 +84,7 @@
         <!--Login-->
         <scene sceneID="RRw-iJ-9U3">
             <objects>
-                <viewController storyboardIdentifier="Login" id="J57-Sk-6Bj" customClass="Login" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="J57-Sk-6Bj" customClass="Login" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zQf-X4-TWw"/>
                         <viewControllerLayoutGuide type="bottom" id="ZJa-ie-flS"/>
@@ -168,7 +168,7 @@
         <!--Pin-->
         <scene sceneID="CBc-aP-l9F">
             <objects>
-                <viewController storyboardIdentifier="Pin" id="gUO-V0-joh" customClass="Pin" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Pin" id="gUO-V0-joh" customClass="Pin" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EZx-20-iLM"/>
                         <viewControllerLayoutGuide type="bottom" id="0AF-PP-DJS"/>
@@ -240,7 +240,7 @@
         <!--Home-->
         <scene sceneID="fks-jG-xCo">
             <objects>
-                <viewController storyboardIdentifier="Home" id="CRp-vh-GUr" customClass="Home" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="CRp-vh-GUr" customClass="Home" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o0D-fx-2mt"/>
                         <viewControllerLayoutGuide type="bottom" id="Dz4-Pz-V8N"/>
@@ -319,7 +319,7 @@
         <!--Summary-->
         <scene sceneID="Yag-yh-YgZ">
             <objects>
-                <viewController id="eme-ii-vQp" customClass="Summary" sceneMemberID="viewController">
+                <viewController id="eme-ii-vQp" customClass="Summary" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6RA-ow-N1m"/>
                         <viewControllerLayoutGuide type="bottom" id="eQx-yR-F0Z"/>
@@ -408,7 +408,7 @@
         <!--Favourite-->
         <scene sceneID="L7r-OF-3Bm">
             <objects>
-                <viewController id="kVp-VF-FFq" customClass="Favourite" sceneMemberID="viewController">
+                <viewController id="kVp-VF-FFq" customClass="Favourite" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NAj-1V-ZpR"/>
                         <viewControllerLayoutGuide type="bottom" id="pGT-d9-Dv2"/>
@@ -483,7 +483,7 @@
         <!--Transfer-->
         <scene sceneID="KvT-u8-UYW">
             <objects>
-                <viewController id="y4c-0F-BXp" customClass="Transfer" sceneMemberID="viewController">
+                <viewController id="y4c-0F-BXp" customClass="Transfer" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bim-wG-Mxl"/>
                         <viewControllerLayoutGuide type="bottom" id="288-rw-cwe"/>
@@ -552,7 +552,7 @@
         <!--History-->
         <scene sceneID="CQE-GX-jDY">
             <objects>
-                <viewController id="lac-Vc-wWl" customClass="History" sceneMemberID="viewController">
+                <viewController id="lac-Vc-wWl" customClass="History" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cgv-a5-Uv6"/>
                         <viewControllerLayoutGuide type="bottom" id="aVu-gy-TM1"/>
@@ -577,7 +577,7 @@
                                 <rect key="frame" x="16" y="84" width="343" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="114" id="gYs-Kr-DjS" customClass="HistoryCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="114" id="gYs-Kr-DjS" customClass="HistoryCell" customModule="watf_bank" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gYs-Kr-DjS" id="Bq9-6H-g1E">
@@ -657,7 +657,7 @@
         <!--Add Favourite-->
         <scene sceneID="q44-Co-LaK">
             <objects>
-                <viewController id="v05-t7-gII" customClass="AddFavourite" sceneMemberID="viewController">
+                <viewController id="v05-t7-gII" customClass="AddFavourite" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uqj-A9-p8a"/>
                         <viewControllerLayoutGuide type="bottom" id="h35-gy-khv"/>
@@ -726,7 +726,7 @@
         <!--Transfer Result-->
         <scene sceneID="8LD-lA-9IY">
             <objects>
-                <viewController storyboardIdentifier="TransferResult" id="KnX-gr-p9z" customClass="TransferResult" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransferResult" id="KnX-gr-p9z" customClass="TransferResult" customModule="watf_bank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gDv-4F-Gef"/>
                         <viewControllerLayoutGuide type="bottom" id="lUT-b1-9T3"/>
@@ -803,113 +803,12 @@
             </objects>
             <point key="canvasLocation" x="4048.8000000000002" y="984.55772113943033"/>
         </scene>
-        <!--History-->
-        <scene sceneID="z07-nC-YIg">
-            <objects>
-                <viewController id="PTr-Tc-Pk1" customClass="History" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jWi-XX-06F"/>
-                        <viewControllerLayoutGuide type="bottom" id="5LI-Jq-e3n"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rLa-Bg-YfG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCw-mv-qdk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="WaTF Bank" id="A37-uk-oV4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ip2-h2-kL1"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOj-LA-JrA">
-                                <rect key="frame" x="16" y="94" width="343" height="543"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="114" id="UNV-DQ-9Em" customClass="HistoryCell">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="114"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UNV-DQ-9Em" id="gi4-Tq-2Z6">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="113.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbb-qw-QOT">
-                                                    <rect key="frame" x="15" y="35" width="313" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDa-1A-Bjm">
-                                                    <rect key="frame" x="15" y="59" width="313" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t43-L2-ZQ0">
-                                                    <rect key="frame" x="15" y="83" width="313" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-cl-iax">
-                                                    <rect key="frame" x="15" y="11" width="313" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="leading" secondItem="PfE-cl-iax" secondAttribute="leading" id="1Td-Fv-N3w"/>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="trailing" secondItem="wDa-1A-Bjm" secondAttribute="trailing" id="Byw-Zd-G2w"/>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="top" secondItem="wDa-1A-Bjm" secondAttribute="bottom" constant="3" id="G03-JZ-PDS"/>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="trailing" secondItem="PfE-cl-iax" secondAttribute="trailing" id="KhT-Bn-JFP"/>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="trailing" secondItem="Nbb-qw-QOT" secondAttribute="trailing" id="MNF-RH-juL"/>
-                                                <constraint firstItem="PfE-cl-iax" firstAttribute="leading" secondItem="gi4-Tq-2Z6" secondAttribute="leading" constant="15" id="QgB-kg-Xko"/>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="leading" secondItem="Nbb-qw-QOT" secondAttribute="leading" id="SNx-5b-dtB"/>
-                                                <constraint firstItem="wDa-1A-Bjm" firstAttribute="top" secondItem="Nbb-qw-QOT" secondAttribute="bottom" constant="3" id="Uce-z2-79i"/>
-                                                <constraint firstItem="PfE-cl-iax" firstAttribute="top" secondItem="gi4-Tq-2Z6" secondAttribute="top" constant="11" id="c8o-le-HUZ"/>
-                                                <constraint firstItem="Nbb-qw-QOT" firstAttribute="top" secondItem="PfE-cl-iax" secondAttribute="bottom" constant="3" id="dGb-af-rNh"/>
-                                                <constraint firstItem="t43-L2-ZQ0" firstAttribute="leading" secondItem="wDa-1A-Bjm" secondAttribute="leading" id="dQY-rF-4S1"/>
-                                                <constraint firstAttribute="trailing" secondItem="PfE-cl-iax" secondAttribute="trailing" constant="15" id="hme-84-c6O"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="amount" destination="wDa-1A-Bjm" id="drm-I5-ruG"/>
-                                            <outlet property="date" destination="t43-L2-ZQ0" id="Iec-Yj-1je"/>
-                                            <outlet property="fromAccount" destination="PfE-cl-iax" id="up1-iq-zfj"/>
-                                            <outlet property="toAccount" destination="Nbb-qw-QOT" id="7TB-Ic-ZRj"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="XCw-mv-qdk" firstAttribute="centerX" secondItem="EOj-LA-JrA" secondAttribute="centerX" id="01S-s0-Way"/>
-                            <constraint firstItem="XCw-mv-qdk" firstAttribute="top" secondItem="jWi-XX-06F" secondAttribute="bottom" id="8zc-3f-leI"/>
-                            <constraint firstAttribute="trailing" secondItem="EOj-LA-JrA" secondAttribute="trailing" constant="16" id="Efo-Rr-fgw"/>
-                            <constraint firstItem="EOj-LA-JrA" firstAttribute="leading" secondItem="rLa-Bg-YfG" secondAttribute="leading" constant="16" id="Hsf-o8-k6O"/>
-                            <constraint firstItem="5LI-Jq-e3n" firstAttribute="top" secondItem="EOj-LA-JrA" secondAttribute="bottom" constant="30" id="Tjv-gR-Frj"/>
-                            <constraint firstItem="XCw-mv-qdk" firstAttribute="leading" secondItem="rLa-Bg-YfG" secondAttribute="leading" id="c5K-Gc-Gwe"/>
-                            <constraint firstItem="EOj-LA-JrA" firstAttribute="top" secondItem="XCw-mv-qdk" secondAttribute="bottom" constant="30" id="fOG-6x-Vms"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WPV-X7-lK5"/>
-                    </view>
-                    <connections>
-                        <outlet property="table" destination="EOj-LA-JrA" id="orx-fW-DIX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhk-c1-6pA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1662" y="1498"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="logo.png" width="16" height="16"/>
+        <image name="logo.png" width="450" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jvs-xE-XjV"/>
-        <segue reference="R1N-jM-N7T"/>
+        <segue reference="wRc-c7-6SD"/>
+        <segue reference="4KK-za-zTH"/>
     </inferredMetricsTieBreakers>
 </document>

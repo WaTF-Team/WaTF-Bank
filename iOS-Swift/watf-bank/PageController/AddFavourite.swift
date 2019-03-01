@@ -11,7 +11,7 @@ class AddFavourite : UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let allowChar = CharacterSet(charactersIn: "0123456789")
-        return  allowChar.isSuperset(of: CharacterSet(charactersIn: string)) && string.count<=10
+        return  allowChar.isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text!.count+string.count)<=10
     }
     
     @IBAction func push(_ sender: Any) {

@@ -2,8 +2,9 @@ import UIKit
 
 class HistoryCell : UITableViewCell {
     
-    @IBOutlet weak var toAccount: UILabel!
-    @IBOutlet weak var amount: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var fromAccount: UILabel!
+    @IBOutlet var fromAccount: UILabel!
+    @IBOutlet var toAccount: UILabel!
+    @IBOutlet var amount: UILabel!
+    @IBOutlet var date: UILabel!
+    
 }

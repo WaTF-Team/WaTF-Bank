@@ -21,14 +21,20 @@ class History : UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if let e = res["error"] {
                     Util.alert(self, e as! String)
                 }
-                else if res["message"] as! String == "success" {
+                else if res["message"] as! String == "Success" {
                     for transaction in res["transaction"] as! Array<Any> {
-                        let t = (try? JSONSerialization.jsonObject(with: (transaction as! String).data(using: .utf8)!, options: [])) as! [String:String]
+                        let t = transaction as! [String:String]
                         self.fromAccountData.append(t["accountNo"]!)
                         self.toAccountData.append(t["toAccountNo"]!)
                         self.amountData.append(t["amount"]!)
                         self.dateData.append(t["datetime"]!)
                     }
+                    DispatchQueue.main.async {
+                        self.table.reloadData()
+                    }
+                }
+                else if let m = res["message"] {
+                    Util.alert(self, m as! String)
                 }
                 else {
                     Util.alert(self, "An Error Occurred")
@@ -46,17 +52,17 @@ class History : UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cc = tableView.dequeueReusableCell(withIdentifier: "celli")
-        if cc==nil {
-            cc = HistoryCell.init(style: .default, reuseIdentifier: "celli")
+        var c : HistoryCell
+        if let cc = tableView.dequeueReusableCell(withIdentifier: "celli") {
+            c = cc as! HistoryCell
         }
-        let c = cc as! HistoryCell
-        c.fromAccount.text = "From : "+fromAccountData[indexPath.row]
-        c.toAccount.text = "From : "+toAccountData[indexPath.row]
-        c.amount.text = "From : "+amountData[indexPath.row]
-        c.date.text = "From : "+dateData[indexPath.row]
+        else {
+            c = HistoryCell.init(style: .default, reuseIdentifier: "celli")
+        }
+        c.fromAccount.text = "From : "+fromAccountData[indexPath.section]
+        c.toAccount.text = "To : "+toAccountData[indexPath.section]
+        c.amount.text = "Amount : "+amountData[indexPath.section]
+        c.date.text = "Date : "+dateData[indexPath.section]
         return c
     }
-    
-    
 }

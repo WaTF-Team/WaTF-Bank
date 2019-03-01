@@ -32,17 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     if let token = KeyChain.load("token") {
                         let input = ["accountNo":from,"toAccountNo":to,"amount":amount,"token":token]
-                        Http().post(input, "transfer", completionHandler: {(res: [String:String]) in
+                        Http().post(input, "transfer", completionHandler: {(re: [String:Any]) in
+                            var res = re as! [String:String]
                             let t = self.window?.rootViewController!.storyboard!.instantiateViewController(withIdentifier: "TransferResult") as! TransferResult
-                            if res["message"] == "success" {
-                                t.label.text = "Transfer Succeeded"
-                                t.fromAccount.text = "From : "+res["username"]!
-                                t.toAccount.text = "To : "+res["tel"]!
-                                t.amount.text = "Amount : "+res["balance"]!
+                            if res["message"] == "Success" {
+                                t.labelV = "Transfer Succeeded"
                             }
                             else {
-                                t.label.text = "Transfer Failed"
+                                t.labelV = "Transfer Failed"
                             }
+                            t.fromAccountV = "From : "+res["username"]!
+                            t.toAccountV = "To : "+res["tel"]!
+                            t.amountV = "Amount : "+res["amount"]!
                             self.window?.rootViewController!.present(t, animated: true, completion: nil)
                         })
                     }

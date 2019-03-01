@@ -28,6 +28,9 @@ class Pin : UIViewController, UITextFieldDelegate {
                 if !KeyChain.save("pin", md5(pinText.text!)) {
                     Util.alert(self, "An Error Occured")
                 }
+                else {
+                    Util.changeView(self, "Home")
+                }
             }
             else {
                 Util.alert(self, "Please Insert 4-digit PIN")
@@ -64,7 +67,7 @@ class Pin : UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let allowChar = CharacterSet(charactersIn: "0123456789")
-        return  allowChar.isSuperset(of: CharacterSet(charactersIn: string)) && string.count<=4
+        return  allowChar.isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text!.count+string.count)<=4
     }
     
     func md5(_ text: String) -> String {
@@ -76,7 +79,6 @@ class Pin : UIViewController, UITextFieldDelegate {
                 CC_MD5(messageBytes, CC_LONG(messageData.count), digestBytes)
             }
         }
-        
-        return String(data: digestData, encoding: .utf8)!
+        return digestData.base64EncodedString()
     }
 }
