@@ -9,6 +9,11 @@ class AddFavourite : UIViewController, UITextFieldDelegate {
         accountNo.delegate = self
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        name.resignFirstResponder()
+        accountNo.resignFirstResponder()
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let allowChar = CharacterSet(charactersIn: "0123456789")
         return  allowChar.isSuperset(of: CharacterSet(charactersIn: string)) && (textField.text!.count+string.count)<=10

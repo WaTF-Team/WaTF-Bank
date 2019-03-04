@@ -62,7 +62,7 @@ class Pin : UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.resignFirstResponder()
+        pinText.resignFirstResponder()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
