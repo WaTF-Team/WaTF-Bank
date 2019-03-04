@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ORt-jo-H47">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ORt-jo-H47">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="XcK-Op-gTf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dd-0o-ULI" sceneMemberID="firstResponder"/>
@@ -71,7 +69,6 @@
                             <constraint firstItem="KgX-fQ-bwk" firstAttribute="leading" secondItem="jbm-vX-VMa" secondAttribute="leading" id="U8r-1w-HNV"/>
                             <constraint firstItem="KgX-fQ-bwk" firstAttribute="top" secondItem="kX2-cd-1YS" secondAttribute="bottom" id="gCD-8a-rNu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KbA-zx-vtj"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="luk-DW-Wh8" id="dwX-45-8hQ"/>
@@ -152,7 +149,6 @@
                             <constraint firstItem="3iC-fq-nSD" firstAttribute="leading" secondItem="RfZ-Ka-yRS" secondAttribute="leading" id="tll-7X-xe4"/>
                             <constraint firstItem="3iC-fq-nSD" firstAttribute="centerX" secondItem="w5d-np-7Oi" secondAttribute="centerX" id="xuB-IE-JuC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9oR-Rs-rNO"/>
                     </view>
                     <connections>
                         <outlet property="ip" destination="OuH-gG-5Lp" id="cJq-ip-igi"/>
@@ -226,7 +222,6 @@
                             <constraint firstItem="pWo-xP-sxO" firstAttribute="leading" secondItem="JRe-S2-wGc" secondAttribute="leading" constant="16" id="uQI-CW-8OK"/>
                             <constraint firstAttribute="trailing" secondItem="C6b-Zv-dqb" secondAttribute="trailing" constant="16" id="uw6-ds-Hfp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Qlf-Jq-cTd"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="C6b-Zv-dqb" id="dk3-4p-Y7f"/>
@@ -309,7 +304,6 @@
                             <constraint firstItem="QnP-bt-8n0" firstAttribute="centerY" secondItem="AOF-jI-Gbu" secondAttribute="centerY" id="sMI-g3-VtQ"/>
                             <constraint firstItem="5nA-KW-zXJ" firstAttribute="leading" secondItem="AOF-jI-Gbu" secondAttribute="leading" id="tRX-Wm-RBP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="arX-xB-Gh6"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yku-v4-j4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,7 +386,6 @@
                             <constraint firstItem="Rie-0X-wFS" firstAttribute="top" secondItem="6RA-ow-N1m" secondAttribute="bottom" id="vxq-op-PQu"/>
                             <constraint firstAttribute="trailing" secondItem="ulc-zg-szn" secondAttribute="trailing" constant="16" id="xzs-26-muy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CEb-Xu-cwP"/>
                     </view>
                     <connections>
                         <outlet property="accountNo" destination="ulc-zg-szn" id="m1d-PC-sbr"/>
@@ -469,7 +462,6 @@
                             <constraint firstItem="q2w-Vq-M1Y" firstAttribute="top" secondItem="0Uy-jk-Fh2" secondAttribute="bottom" id="xlw-g6-QwU"/>
                             <constraint firstItem="BfF-KE-cxz" firstAttribute="top" secondItem="q2w-Vq-M1Y" secondAttribute="bottom" id="zGF-yO-Q9t"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Sva-X8-U4O"/>
                     </view>
                     <connections>
                         <outlet property="amount" destination="BfF-KE-cxz" id="hYC-vf-ceZ"/>
@@ -538,7 +530,6 @@
                             <constraint firstItem="pWg-ef-NdC" firstAttribute="centerX" secondItem="zSl-Af-yET" secondAttribute="centerX" id="kcT-ud-vOZ"/>
                             <constraint firstItem="t6v-Uo-q3T" firstAttribute="leading" secondItem="a3t-Sd-g66" secondAttribute="leading" constant="16" id="ycd-h7-m5r"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7DP-f3-QyM"/>
                     </view>
                     <connections>
                         <outlet property="accountNo" destination="zSl-Af-yET" id="kMh-a3-jZ1"/>
@@ -644,7 +635,6 @@
                             <constraint firstItem="MQZ-OJ-tEM" firstAttribute="leading" secondItem="UYf-fu-cAO" secondAttribute="leading" constant="16" id="jfb-Bs-7df"/>
                             <constraint firstItem="MQZ-OJ-tEM" firstAttribute="top" secondItem="w2N-ht-abR" secondAttribute="bottom" constant="20" id="w9X-LG-mp2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WWk-Qi-mV8"/>
                     </view>
                     <connections>
                         <outlet property="table" destination="MQZ-OJ-tEM" id="nf2-oI-klO"/>
@@ -712,7 +702,6 @@
                             <constraint firstItem="I41-TO-01a" firstAttribute="top" secondItem="UmT-gS-d6h" secondAttribute="bottom" constant="50" id="tfY-ev-JWJ"/>
                             <constraint firstItem="UmT-gS-d6h" firstAttribute="centerX" secondItem="I41-TO-01a" secondAttribute="centerX" id="x9Y-Hs-R9R"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Efz-UY-Dqn"/>
                     </view>
                     <connections>
                         <outlet property="accountNo" destination="H6m-dl-Tdb" id="3lO-5H-p8S"/>
@@ -790,7 +779,6 @@
                             <constraint firstItem="9Qr-gS-5tQ" firstAttribute="top" secondItem="fsr-2Y-rrc" secondAttribute="bottom" constant="30" id="oqM-2s-LIC"/>
                             <constraint firstItem="Oyp-h5-J87" firstAttribute="top" secondItem="9Qr-gS-5tQ" secondAttribute="bottom" constant="30" id="vxo-Tu-kMr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ixz-wm-0s3"/>
                     </view>
                     <connections>
                         <outlet property="amount" destination="Oyp-h5-J87" id="BRf-1m-dtn"/>
