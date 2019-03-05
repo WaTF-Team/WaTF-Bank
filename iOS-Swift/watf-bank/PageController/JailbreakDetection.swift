@@ -4,6 +4,9 @@ class JailbreakDetection : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if isJail() {
+            Util.changeView(self, "Jailbreak")
+        }
+        else {
             if let token = KeyChain.load("token") {
                 if token != "" {
                     Util.changeView(self,"Pin")
@@ -12,9 +15,6 @@ class JailbreakDetection : UIViewController {
             else {
                 Util.changeView(self,"Login")
             }
-        }
-        else {
-            Util.changeView(self, "Jailbreak")
         }
     }
     

@@ -70,9 +70,6 @@
                             <constraint firstItem="KgX-fQ-bwk" firstAttribute="top" secondItem="kX2-cd-1YS" secondAttribute="bottom" id="gCD-8a-rNu"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="luk-DW-Wh8" id="dwX-45-8hQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A01-ZU-8sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

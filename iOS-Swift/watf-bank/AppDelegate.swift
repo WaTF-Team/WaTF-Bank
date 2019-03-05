@@ -71,13 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if bgState {
             bgState = false
             if JailbreakDetection().isJail() {
-                Util.changeView((self.window?.rootViewController)!, "Jailbreak")
+                self.window?.rootViewController = self.window?.rootViewController!.storyboard!.instantiateViewController(withIdentifier: "Jailbreak")
             }
             else if KeyChain.load("token")==nil {
-                Util.changeView((self.window?.rootViewController)!, "Login")
+                self.window?.rootViewController = self.window?.rootViewController!.storyboard!.instantiateViewController(withIdentifier: "Login")
             }
             else {
-                Util.changeView((self.window?.rootViewController)!, "Pin")
+                self.window?.rootViewController = self.window?.rootViewController!.storyboard!.instantiateViewController(withIdentifier: "Pin")
             }
         }
     }
