@@ -29,5 +29,18 @@
             android:gravity="center"
             android:text="Rooted device or Emulator device!"
             android:textSize="26sp"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spaceMedium" />
+
+        <Button
+            android:id="@+id/btnAboutme"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button"
+            android:layout_gravity="center"
+            android:text="Development Team"
+            android:textColor="@android:color/holo_blue_dark" />
     </LinearLayout>
 </LinearLayout>

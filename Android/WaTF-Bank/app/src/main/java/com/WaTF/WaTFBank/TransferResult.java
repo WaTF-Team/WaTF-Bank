@@ -56,7 +56,7 @@ public class TransferResult extends LogoutButton {
                         new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
         } else {
             Intent intent = new Intent();
-            intent.setAction("com.WaTF.WaTFBank.Receiver");
+            intent.setAction("com.WaTF.WaTFBank.SEND_SMS");
             intent.putExtra("tel", tel);
             intent.putExtra("username", username);
             intent.putExtra("toAccount", toAccount);

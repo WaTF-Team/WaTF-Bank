@@ -47,4 +47,5 @@
 
         <activity android:name="com.WaTF.WaTFBank.Root"></activity>
     </application>
+
 </manifest>

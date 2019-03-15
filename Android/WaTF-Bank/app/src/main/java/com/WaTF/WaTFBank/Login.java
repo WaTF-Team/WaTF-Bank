@@ -1,6 +1,7 @@
 package com.WaTF.WaTFBank;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,7 +33,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private static final int MY_PERMISSIONS_REQUEST = 0;
     EditText etUsername, etPassword, etIp1, etIp2, etIp3, etIp4, etPort;
-    Button btnLogin;
+    Button btnLogin, btnAboutme;
     private AdView mAdView;
 
     @Override
@@ -40,11 +41,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         appPermissionRequest();
-//        if (isRooted()) {
-//            Intent intent = new Intent(this, Root.class);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            startActivity(intent);
-//        }
+        if (isRooted()) {
+            Intent intent = new Intent(this, Root.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         etIp1 = findViewById(R.id.etIp1);
@@ -70,6 +71,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        btnAboutme = findViewById(R.id.btnAboutme);
+        btnAboutme.setOnClickListener(this);
     }
 
     @Override
@@ -85,7 +88,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 AsyncTaskBackGround asyncTaskBackGround = new AsyncTaskBackGround();
                 asyncTaskBackGround.execute(username, password, ip);
             }
-        }
+        } else
+            ShowPopup();
     }
 
     public static boolean isRooted() {
@@ -212,5 +216,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         for (int i = 0; i < data.length(); i++)
             sb.append((char) (data.charAt(i) ^ key.charAt(i % key.length())));
         return sb.toString();
+    }
+
+    public void ShowPopup() {
+        Dialog myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.activity_about);
+        myDialog.show();
     }
 }
