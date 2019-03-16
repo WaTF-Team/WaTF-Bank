@@ -57,7 +57,7 @@ public class CheckPin extends LogoutButton implements View.OnClickListener {
 
     public boolean checkPin(String pinEnter) {
         String pin = getFromSharePref("pin");
-        return pinEnter.equals(pin);
+        return pin.equals(pinEnter);
     }
 
     private String md5(String in) {
