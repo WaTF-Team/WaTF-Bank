@@ -45,34 +45,35 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(this, Root.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
+        } else {
+            etUsername = findViewById(R.id.etUsername);
+            etPassword = findViewById(R.id.etPassword);
+            etIp1 = findViewById(R.id.etIp1);
+            etIp2 = findViewById(R.id.etIp2);
+            etIp3 = findViewById(R.id.etIp3);
+            etIp4 = findViewById(R.id.etIp4);
+            etPort = findViewById(R.id.etPort);
+            btnLogin = findViewById(R.id.btnLogin);
+            btnLogin.setOnClickListener(this);
+            String ip = getFromSharePref("ip");
+            String token = getFromSharePref("token");
+            String pin = getFromSharePref("pin");
+            if (token != null && pin != null)
+                startActivity(new Intent(this, CheckPin.class));
+            if (ip != null) {
+                String[] ipSplit = ip.split(Pattern.quote("."));
+                etIp1.setText(ipSplit[0].split("/")[2]);
+                etIp2.setText(ipSplit[1]);
+                etIp3.setText(ipSplit[2]);
+                etIp4.setText(ipSplit[3].split(":")[0]);
+                etPort.setText(ipSplit[3].split(":")[1]);
+            }
+            mAdView = findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+            btnAboutme = findViewById(R.id.btnAboutme);
+            btnAboutme.setOnClickListener(this);
         }
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
-        etIp1 = findViewById(R.id.etIp1);
-        etIp2 = findViewById(R.id.etIp2);
-        etIp3 = findViewById(R.id.etIp3);
-        etIp4 = findViewById(R.id.etIp4);
-        etPort = findViewById(R.id.etPort);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
-        String ip = getFromSharePref("ip");
-        String token = getFromSharePref("token");
-        String pin = getFromSharePref("pin");
-        if (token != null && pin != null)
-            startActivity(new Intent(this, CheckPin.class));
-        if (ip != null) {
-            String[] ipSplit = ip.split(Pattern.quote("."));
-            etIp1.setText(ipSplit[0].split("/")[2]);
-            etIp2.setText(ipSplit[1]);
-            etIp3.setText(ipSplit[2]);
-            etIp4.setText(ipSplit[3].split(":")[0]);
-            etPort.setText(ipSplit[3].split(":")[1]);
-        }
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        btnAboutme = findViewById(R.id.btnAboutme);
-        btnAboutme.setOnClickListener(this);
     }
 
     @Override
