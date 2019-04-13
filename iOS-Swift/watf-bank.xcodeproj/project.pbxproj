@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E66864882227D57800B06DE2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E66864822227D57800B06DE2 /* logo.png */; };
+		E6A1155F2244771100851D3C /* watf_bankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1155E2244771100851D3C /* watf_bankTests.swift */; };
 		E6AE1FCF221D094400C48740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE1FCE221D094400C48740 /* AppDelegate.swift */; };
 		E6AE1FD1221D094400C48740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE1FD0221D094400C48740 /* ViewController.swift */; };
 		E6AE1FD4221D094400C48740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6AE1FD2221D094400C48740 /* Main.storyboard */; };
@@ -34,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E6A115612244771100851D3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6AE1FC3221D094400C48740 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6AE1FCA221D094400C48740;
+			remoteInfo = "watf-bank";
+		};
 		E6AE202E221D479500C48740 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E6AE2025221D479500C48740 /* sqlcipher.xcodeproj */;
@@ -80,6 +88,9 @@
 
 /* Begin PBXFileReference section */
 		E66864822227D57800B06DE2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E6A1155C2244771100851D3C /* watf-bankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "watf-bankTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A1155E2244771100851D3C /* watf_bankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watf_bankTests.swift; sourceTree = "<group>"; };
+		E6A115602244771100851D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6AE1FCB221D094400C48740 /* watf-bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watf-bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AE1FCE221D094400C48740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6AE1FD0221D094400C48740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +120,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E6A115592244771100851D3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6AE1FC8221D094400C48740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,12 +139,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6A1155D2244771100851D3C /* watf-bankTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6A1155E2244771100851D3C /* watf_bankTests.swift */,
+				E6A115602244771100851D3C /* Info.plist */,
+			);
+			path = "watf-bankTests";
+			sourceTree = "<group>";
+		};
 		E6AE1FC2221D094400C48740 = {
 			isa = PBXGroup;
 			children = (
 				E6AE200E221D45E100C48740 /* Header.h */,
 				E6AE2025221D479500C48740 /* sqlcipher.xcodeproj */,
 				E6AE1FCD221D094400C48740 /* watf-bank */,
+				E6A1155D2244771100851D3C /* watf-bankTests */,
 				E6AE1FCC221D094400C48740 /* Products */,
 				E6AE200A221D452200C48740 /* Frameworks */,
 			);
@@ -136,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AE1FCB221D094400C48740 /* watf-bank.app */,
+				E6A1155C2244771100851D3C /* watf-bankTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +230,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E6A1155B2244771100851D3C /* watf-bankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6A1156A2244771100851D3C /* Build configuration list for PBXNativeTarget "watf-bankTests" */;
+			buildPhases = (
+				E6A115582244771100851D3C /* Sources */,
+				E6A115592244771100851D3C /* Frameworks */,
+				E6A1155A2244771100851D3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6A115622244771100851D3C /* PBXTargetDependency */,
+			);
+			name = "watf-bankTests";
+			productName = "watf-bankTests";
+			productReference = E6A1155C2244771100851D3C /* watf-bankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E6AE1FCA221D094400C48740 /* watf-bank */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6AE1FDD221D094600C48740 /* Build configuration list for PBXNativeTarget "watf-bank" */;
@@ -229,6 +276,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "WaTF-Team";
 				TargetAttributes = {
+					E6A1155B2244771100851D3C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E6AE1FCA221D094400C48740;
+					};
 					E6AE1FCA221D094400C48740 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -254,6 +305,7 @@
 			projectRoot = "";
 			targets = (
 				E6AE1FCA221D094400C48740 /* watf-bank */,
+				E6A1155B2244771100851D3C /* watf-bankTests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +349,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E6A1155A2244771100851D3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6AE1FC9221D094400C48740 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,6 +370,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E6A115582244771100851D3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A1155F2244771100851D3C /* watf_bankTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6AE1FC7221D094400C48740 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +406,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E6A115622244771100851D3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6AE1FCA221D094400C48740 /* watf-bank */;
+			targetProxy = E6A115612244771100851D3C /* PBXContainerItemProxy */;
+		};
 		E6AE204D221D488700C48740 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = sqlcipher;
@@ -366,6 +438,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E6A115632244771100851D3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2V9PSZD7R6;
+				INFOPLIST_FILE = "watf-bankTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WaTF-Team.watf-bankTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watf-bank.app/watf-bank";
+			};
+			name = Debug;
+		};
+		E6A115642244771100851D3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2V9PSZD7R6;
+				INFOPLIST_FILE = "watf-bankTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WaTF-Team.watf-bankTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watf-bank.app/watf-bank";
+			};
+			name = Release;
+		};
 		E6AE1FDB221D094600C48740 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -536,6 +648,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E6A1156A2244771100851D3C /* Build configuration list for PBXNativeTarget "watf-bankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A115632244771100851D3C /* Debug */,
+				E6A115642244771100851D3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E6AE1FC6221D094400C48740 /* Build configuration list for PBXProject "watf-bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

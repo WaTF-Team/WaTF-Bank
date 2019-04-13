@@ -1224,6 +1224,7 @@
 				PRODUCT_NAME = amalgamation;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Debug;
 		};
@@ -1236,6 +1237,7 @@
 				PRODUCT_NAME = amalgamation;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;

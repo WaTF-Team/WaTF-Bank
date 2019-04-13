@@ -26,9 +26,9 @@ class Login : UIViewController {
         let a = SQLCipher.createFav()
         let b = SQLCipher.createCred()
         if !(a||b) {
-            Util.alert(self, "Create Table Failed")
             _ = SQLCipher.drop("fav")
             _ = SQLCipher.drop("cred")
+            login.isEnabled = true
             return
         }
         let payload = ["username":username.text!,"password":password.text!]

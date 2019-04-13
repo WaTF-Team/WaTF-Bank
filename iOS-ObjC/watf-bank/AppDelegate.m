@@ -129,7 +129,6 @@ static bool bgState = false;
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [Util saveKeychain:@"ip" :[Http getIp]];
 }
 
 @end

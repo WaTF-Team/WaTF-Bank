@@ -271,7 +271,7 @@
                                     <navigationItem title="WaTF Bank" id="b8B-i2-uPe">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="9EA-1u-ik3">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fCW-uA-9yq">
-                                                <rect key="frame" x="221" y="7" width="83" height="30"/>
+                                                <rect key="frame" x="221" y="10" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Logout"/>
                                                 <connections>

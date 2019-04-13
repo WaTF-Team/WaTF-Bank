@@ -78,7 +78,7 @@ bool fingerprint = true;
         if([self checkPin])
         {
             fingerprint = true;
-            [Util changeView:self :@"Home"];
+            [self nextPage];
         }
         else
         {
@@ -94,7 +94,7 @@ bool fingerprint = true;
         else if([Util saveKeychain:@"pin" :[Util md5:_pin.text]])
         {
             fingerprint = true;
-            [Util changeView:self :@"Home"];
+            [self nextPage];
         }
         else
         {
@@ -106,6 +106,11 @@ bool fingerprint = true;
 -(BOOL)checkPin
 {
     return [[Util getKeychain:@"pin"] isEqualToString:[Util md5:_pin.text]];
+}
+
+-(void)nextPage
+{
+    [Util changeView:self :@"Home"];
 }
 
 @end

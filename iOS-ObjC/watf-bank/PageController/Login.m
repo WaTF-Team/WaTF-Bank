@@ -37,6 +37,7 @@
 - (IBAction)push:(id)sender {
     _login.enabled = false;
     [Http setIp:_ipp.text];
+    [Util saveKeychain:@"ip":_ipp.text];
     NSLog(@"Username:%@ Password:%@",_username.text,_password.text);
     NSDictionary *input = [NSDictionary dictionaryWithObjectsAndKeys:_username.text,@"username",_password.text,@"password", nil];
     [Http post:@"login" :input :^(NSDictionary *res){
