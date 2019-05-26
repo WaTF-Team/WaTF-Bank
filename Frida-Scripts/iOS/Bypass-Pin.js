@@ -1,8 +1,6 @@
-if (ObjC.available)
-{
-    try
-    {
-        var className = "Pin";
+function bypasspin() {
+	try {
+		var className = "Pin";
         var funcName = "- checkPin";
         var hook = eval('ObjC.classes.' + className + '["' + funcName + '"]');
         Interceptor.attach(hook.implementation, {
@@ -14,13 +12,13 @@ if (ObjC.available)
             console.log("\t[-] Return Value: " + retval);
           }
         });
-    }
-    catch(err)
-    {
-        console.log("[!] Exception2: " + err.message);
-    }
+	} catch(err) {
+		console.log("[-] Error: " + err.message);
+	}
 }
-else
-{
-    console.log("Objective-C Runtime is not available!");
+
+if (ObjC.available) {
+	bypasspin();
+} else {
+ 	send("error: Objective-C Runtime is not available!");
 }
