@@ -1,8 +1,6 @@
-if (ObjC.available)
-{
-    try
-    {
-        var className = "Pin";
+function invokepinmethod() {
+	try {
+		var className = "Pin";
         var funcName = "- checkPin";
         var hook = eval('ObjC.classes.' + className + '["' + funcName + '"]');
         Interceptor.attach(hook.implementation, {
@@ -14,13 +12,13 @@ if (ObjC.available)
             console.log("\t[-] Invoke method for Bypass ");
           }
         });
-    }
-    catch(err)
-    {
-        console.log("[!] Exception: " + err.message);
-    }
+	} catch(err) {
+		console.log("[-] Error: " + err.message);
+	}
 }
-else
-{
-    console.log("Objective-C Runtime is not available!");
+
+if (ObjC.available) {
+	invokepinmethod();
+} else {
+ 	send("error: Objective-C Runtime is not available!");
 }
