@@ -5,18 +5,25 @@ import android.app.KeyguardManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -33,6 +40,7 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_pin);
+        copyAssets();
         tvSetFP = findViewById(R.id.tvSetFP);
         etPin = findViewById(R.id.etPin);
         btnSetPin = findViewById(R.id.btnSetPin);
@@ -45,8 +53,6 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-//        else
-//            Toast.makeText(this, "Fingerprint enabled", Toast.LENGTH_SHORT).show();
 
         if (mFingerprintManager.isHardwareDetected()) {
             if (!mKeyguardManager.isKeyguardSecure()) {
@@ -105,4 +111,47 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener {
         editor.putString(name, data);
         editor.commit();
     }
+
+    private void copyAssets() {
+        AssetManager assetManager = getAssets();
+        String[] files = null;
+        try {
+            files = assetManager.list("");
+        } catch (IOException e) {
+            Log.e("tag", "Failed to get asset file list.", e);
+        }
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = assetManager.open("watf.jar");
+            File outFile = new File(getExternalFilesDir(null), "watf.jar");
+            out = new FileOutputStream(outFile);
+            copyFile(in, out);
+        } catch (IOException e) {
+            Log.e("tag", "Failed to copy asset file: " + "watf.jar", e);
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                }
+            }
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                }
+            }
+        }
+    }
+
+    private void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while ((read = in.read(buffer)) != -1) {
+            out.write(buffer, 0, read);
+        }
+    }
+
+
 }

@@ -1,19 +1,25 @@
 package com.WaTF.WaTFBank;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Method;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import dalvik.system.PathClassLoader;
 
 public class CheckPin extends LogoutButton implements View.OnClickListener {
 
@@ -47,6 +53,7 @@ public class CheckPin extends LogoutButton implements View.OnClickListener {
     public void onClick(View view) {
         String pinEnter = etPin.getText().toString();
         if (checkPin(md5(pinEnter))) {
+            watfText();
             Intent intent = new Intent(CheckPin.this, Home.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.putExtra("flag", true);
@@ -101,6 +108,28 @@ public class CheckPin extends LogoutButton implements View.OnClickListener {
         super.onPause();
         if (mFingerprintHelper != null) {
             mFingerprintHelper.stopListening();
+        }
+    }
+
+    private void watfText() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(CheckPin.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
+            } else if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(CheckPin.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+            } else {
+                String dexPath = getExternalFilesDir(null)+"/watf.jar";
+                PathClassLoader classLoader2 = new PathClassLoader(dexPath, getClassLoader());
+                try {
+                    Class<?> c = classLoader2.loadClass("watf");
+                    Object o = c.newInstance();
+                    Method m = c.getMethod("welcome");
+                    Object res = m.invoke(o);
+                    Toast.makeText(this, res.toString(), Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
