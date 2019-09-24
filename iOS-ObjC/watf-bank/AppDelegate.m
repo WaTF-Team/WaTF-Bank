@@ -110,7 +110,7 @@ static bool bgState = false;
     if(bgState)
     {
         bgState = false;
-        if(![JailbreakDetection isJail])
+        if([JailbreakDetection isJail])
         {
             self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Jailbreak"];
             return;
