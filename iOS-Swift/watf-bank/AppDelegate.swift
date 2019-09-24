@@ -81,11 +81,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        _ = KeyChain.save("ip", Http.getIp())
-    }
-
-
 }
 

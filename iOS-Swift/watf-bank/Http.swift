@@ -3,14 +3,14 @@ import UIKit
 
 class Http: NSObject, URLSessionDelegate {
     
-    static var ip = "127.0.0.1:5000"
+    private static var ip = "127.0.0.1:5000"
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
         completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
     }
     
     func post(_ payload: [String: String],_ api: String, completionHandler:@escaping ([String: Any]) -> ()) {
-        var request = URLRequest(url: URL(string: "https://\(Http.ip)/\(api)")!)
+        var request = URLRequest(url: URL(string: "https://\(Http.getIp())/\(api)")!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted )
@@ -44,6 +44,6 @@ class Http: NSObject, URLSessionDelegate {
     }
     
     static func getIp() -> String {
-        return ip
+        return KeyChain.load("ip") ?? ip
     }
 }

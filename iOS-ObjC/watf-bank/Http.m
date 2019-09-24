@@ -26,14 +26,21 @@ static NSString *ip;
 {
     if(ip==nil)
     {
-        [self setIp:@"192.168.1.1"];
+        if([Util getKeychain:@"ip"]==nil)
+        {
+            [self setIp:@"127.0.0.1"];
+        }
+        else
+        {
+            [self setIp:[Util getKeychain:@"ip"]];
+        }
     }
     return ip;
 }
 
 +(void)post:(NSString*)api :(NSDictionary*)data :(void (^)(NSDictionary *res))completion
 {
-    NSString *url = [NSString stringWithFormat:@"https://%@:5000/",ip];
+    NSString *url = [NSString stringWithFormat:@"https://%@:5000/",[self getIp]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",url,api]]];
     NSError *e = nil;
     [request setHTTPMethod:@"POST"];
