@@ -40,3 +40,12 @@ class LoginLog(db.Model):
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
+
+class TokenCount(db.Model):
+    __tablename__ = 'token_counts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    token_count = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return '<id {}>'.format(self.id)

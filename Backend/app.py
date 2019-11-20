@@ -26,15 +26,17 @@ def login():
         return '{"message":"Invalid username"}'
     else:
         if u.password != password:
-            return '{"message":"Invalid username or password"}'
+            return '{"message":"Invalid password"}'
         accountNoDB = u.accountNo
-        token = str(randint(0000000000, 9999999999))
+        token = TokenCount.query.first()
+        token.token_count = token.token_count + 1
+        db.session.merge(token)
         db.session.add(LoginLog(user_id = u.id))
-        u.token = token
+        u.token = token.token_count
         db.session.merge(u)
         db.session.commit()
         db.session.close_all()
-        return '{"message":"Success", "accountNo":"' + accountNoDB + '", "token":"' + token  + '"}'
+        return '{"message":"Success", "accountNo":"' + accountNoDB + '", "token":"' + str(token.token_count)  + '"}'
 
 @app.route('/checkAuthen')
 def checkAuthen():
@@ -118,4 +120,4 @@ def LoginUserLog():
     return render_template('login_user_log.html', login_logs=login_logs)
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0', port=5000, debug=False, ssl_context=('cert.pem', 'key.pem'))
+   app.run(host= '0.0.0.0', port=5000, debug=False, ssl_context=('cert.pem', 'key.pem'))

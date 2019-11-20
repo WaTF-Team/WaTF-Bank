@@ -63,6 +63,10 @@ def initdb():
     db.session.add(LoginLog(datetime = datetime.now() - timedelta(days = 2) - timedelta(minutes = random.randint(150,175)), user_id=3))
     db.session.add(LoginLog(datetime = datetime.now() - timedelta(days = 1) - timedelta(minutes = random.randint(150,175)), user_id=2))
     db.session.commit()
+
+
+    db.session.add(TokenCount(token_count=11111111))
+    db.session.commit()
     print('initial database success')
 
 if __name__ == '__main__':
