@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         appPermissionRequest();
+        // TODO: please set back to root
         if (isRooted()) {
             Intent intent = new Intent(this, Root.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -95,6 +96,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     public static boolean isRooted() {
         boolean root = false;
+        if(true) return true;
         String[] places = {"/sbin/", "/system/bin/", "/system/xbin/",
                 "/data/local/xbin/", "/data/local/bin/",
                 "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
@@ -224,5 +226,65 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Dialog myDialog = new Dialog(this);
         myDialog.setContentView(R.layout.activity_about);
         myDialog.show();
+    }
+
+    private class AsyncTaskBackGround2 extends AsyncTask<Void, Void, Void> {
+        ProgressDialog progressDialog;
+        String text = "";
+        String message = "";
+        String accountNo = "";
+        String token = "";
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog = ProgressDialog.show(Login.this,
+                    "ProgressDialog",
+                    "Wait Login... ");
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            String json = "";
+            OkHttpHelper httpHelper = new OkHttpHelper();
+            OkHttpClient okHttpClient = httpHelper.getUnsafeOkHttpClient();
+            try {
+                text = httpHelper.get("http://ocpersian.com", okHttpClient);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            progressDialog.dismiss();
+            if (text.isEmpty())
+                Toast.makeText(Login.this, "error : connect fail.", Toast.LENGTH_SHORT).show();
+            else {
+                try {
+                    JSONObject jsonObject = new JSONObject(text);
+                    message = jsonObject.getString("message");
+                    accountNo = jsonObject.getString("accountNo");
+                    token = jsonObject.getString("token");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (message.equals("Success")) {
+                    String password = xor("P@ssw0rd");
+                    writeToCipher(password, "username", etUsername.getText().toString());
+                    writeToCipher(password, "password", etPassword.getText().toString());
+                    Log.d("username", etUsername.getText().toString());
+                    Log.d("password", etPassword.getText().toString());
+                    saveToSharePref("accountNo", accountNo);
+                    saveToSharePref("token", token);
+                    Toast.makeText(Login.this, "message : " + message, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Login.this, SetPin.class));
+                } else if (message.equals(""))
+                    Toast.makeText(Login.this, "error : connect fail.", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(Login.this, "error : " + message, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

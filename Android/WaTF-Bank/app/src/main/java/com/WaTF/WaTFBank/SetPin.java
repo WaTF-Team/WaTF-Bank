@@ -53,6 +53,8 @@ public class SetPin extends AppCompatActivity implements View.OnClickListener {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
+//        else
+//            Toast.makeText(this, "Fingerprint enabled", Toast.LENGTH_SHORT).show();
 
         if (mFingerprintManager.isHardwareDetected()) {
             if (!mKeyguardManager.isKeyguardSecure()) {

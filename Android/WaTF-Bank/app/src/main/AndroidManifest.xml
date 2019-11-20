@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.WaTF.WaTFBank.SetPin" />
-        <activity android:name="com.WaTF.WaTFBank.CheckPin" />
+        <activity android:name="com.WaTF.WaTFBank.CheckPin"     />
         <activity android:name="com.WaTF.WaTFBank.AccountSummary" />
         <activity android:name="com.WaTF.WaTFBank.Home" />
         <activity android:name="com.WaTF.WaTFBank.Transfer" />

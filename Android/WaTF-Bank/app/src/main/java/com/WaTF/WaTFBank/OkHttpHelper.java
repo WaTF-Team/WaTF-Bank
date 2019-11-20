@@ -21,6 +21,19 @@ import okhttp3.Response;
 public class OkHttpHelper {
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
+    public String get(String url, OkHttpClient client) throws IOException {
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+            return response.body().string();
+        } catch (SocketTimeoutException e) {
+            return "{ 'message':'connection fails' }";
+        }
+    }
+
     public String post(String url, String json, OkHttpClient client) throws IOException {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
