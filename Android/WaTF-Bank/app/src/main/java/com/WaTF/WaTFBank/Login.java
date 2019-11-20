@@ -41,7 +41,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         appPermissionRequest();
-        // TODO: please set back to root
         if (isRooted()) {
             Intent intent = new Intent(this, Root.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -96,7 +95,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     public static boolean isRooted() {
         boolean root = false;
-        if(true) return true;
         String[] places = {"/sbin/", "/system/bin/", "/system/xbin/",
                 "/data/local/xbin/", "/data/local/bin/",
                 "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
