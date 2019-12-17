@@ -92,6 +92,7 @@ def transfer():
             b.balance = str(int(b.balance) + amountInt)
             id = a.id
             db.session.merge(u)
+            db.session.merge(b)
             db.session.add(TransferHistory(account = accountNo, to_account = toAccountNo, amount = amount, user_id = id))
             db.session.commit()
             db.session.close_all()
