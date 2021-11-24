@@ -44,6 +44,12 @@ Starting backend (The database will also be remigrated)
 ./StartServer
 ```
 
+### Docker
+```
+docker pull watfteam/watfbank
+docker run -d -p 5000:5000 --name watfbank -i -t watfteam/watfbank
+```
+
 ## Project Team
 
 - Boonpoj Thongakaraniroj
